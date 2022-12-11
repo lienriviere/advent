@@ -2,27 +2,14 @@
 
 namespace AyeIcu\AdventOfCode\Day02;
 
-enum HandShape: int
+enum HandShape: string
 {
-    case Rock = 1;
-    case Paper = 2;
-    case Scissors = 3;
+    case A = 'Rock';
+    case X = 'Rock';
 
-    public function points(): int
-    {
-        return match($this) {
-            HandShape::Rock => 1,
-            HandShape::Paper => 2,
-            HandShape::Scissors => 3,
-        };
-    }
+    case B = 'Paper';
+    case Y = 'Paper';
 
-    public static function shape($l): static
-    {
-        return match($l) {
-            'A', 'X' => static::Rock,
-            'B', 'Y' => static::Paper,
-            'C', 'Z' => static::Scissors,
-        };
-    }
+    case C = 'Scissors';
+    case Z = 'Scissors';
 }
